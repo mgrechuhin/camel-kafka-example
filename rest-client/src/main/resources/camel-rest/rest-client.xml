@@ -1,0 +1,7 @@
+<rests xmlns="http://camel.apache.org/schema/spring">
+    <rest>
+        <put uri="/word">
+            <to uri="kafka:words?brokers={{kafka.bootstrap.url}}"/>
+        </put>
+    </rest>
+</rests>

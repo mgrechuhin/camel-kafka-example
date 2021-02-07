@@ -1,0 +1,4 @@
+<route xmlns="http://camel.apache.org/schema/spring">
+    <from uri="kafka:sentences?brokers={{kafka.bootstrap.url}}"/>
+    <to uri="cql://localhost/myapp?cql=insert into sentences(id, sentence) values(uuid(), ?)"/>
+</route>
